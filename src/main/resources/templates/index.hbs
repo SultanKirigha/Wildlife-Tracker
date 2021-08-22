@@ -1,0 +1,55 @@
+{{#partial "navlinks"}}
+    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            View Animals
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/animals/endangered">Endangered</a>
+            <a class="dropdown-item" href="/animals/not-endangered">Not Endangered</a>
+        </div>
+    </li>
+    <li class="nav-item"><a class="nav-link" href="/rangers">Our Rangers</a></li>
+    <li class="nav-item"><a class="nav-link" href="/sightings">Sighting Locations</a></li>
+    <li class="nav-item"><a class="nav-link" href="/sighting/new">New Sighting</a></li>
+{{/partial}}
+
+{{#partial "preContent"}}
+    <div class="jumbotron jumbotrion-fluid default-jumbotron" style="background-image:url(/images/nam-anh-QJbyG6O0ick-unsplash.jpg);background-size: cover;background-repeat: no-repeat;height: 100vh;width: 100vw;">
+            <div class="container" style="color:#fff;">
+            <h1 style="font-size: 7.5rem;font-family: serif;font-weight: revert;color: #fff">Karibu for a safari in the wild</h1>
+            <p class="lead">Kenya pride of africa keeping track of our animals</p>
+        </div>
+
+    </div>
+{{/partial}}
+
+{{#partial "content"}}
+    {{#if sightings}}
+        <h4 class="text-center" style="margin-top: -50%;color: #fff;font-size: xx-large;font-weight: 600;">Data collected on the animal sightings</h4>
+        <table class="table text-center">
+            <thead style="background-color:#fff; color:black;opacity:0.5;">
+            <tr>
+                <th scope="col">Animal Seen</th>
+                <th scope="col">Location</th>
+                <th scope="col">Spotted On</th>
+                <th scope="col">Ranger</th>
+            </tr>
+            </thead>
+            <tbody style="color:#fff;">
+            {{#each sightings}}
+                <tr>
+                    <td>{{animalName}}</td>
+                    <td>{{location}}</td>
+                    <td>{{readableTimestamp}}</td>
+                    <td>{{rangerName}}</a></td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <h5 class="text-center">No animals sighted yet. Report a sighting to have it appear here</h5>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
