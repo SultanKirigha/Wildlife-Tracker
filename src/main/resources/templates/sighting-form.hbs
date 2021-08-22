@@ -15,18 +15,18 @@
 {{/partial}}
 
 {{#partial "preContent"}}
-    <div class="jumbotron jumbotrion-fluid sighting-jumbotron">
+    <div class="jumbotron jumbotrion-fluid sighting-jumbotron"style="background-image:url(/images/cara-fuller-QF38t6obcnk-unsplash.jpg);background-size: cover;background-repeat: no-repeat;height: 100vh;width: 100vw;">
         <div class="container">
-            <h1 class="display-3">Sacred Jungle!</h1>
-            <p class="lead">The animal conservancy</p>
+             <h1 class="display-3"style="font-size: 5rem;font-family: serif;font-weight: revert;color: #fff">Become a Ranger Now by Sighting an Animal</h1>
+             <p class="lead" style="color:#fff;">Kenya pride of africa keeping track of our animals</p>
         </div>
     </div>
 {{/partial}}
 
 {{#partial "content"}}
-    <h3 class="text-center">Report a new sighting!</h3>
+    <h3 class="text-center"style="margin-top: -60%;color: #fff;font-size: xx-large;font-weight: 600;">Record a new sighting!</h3>
     {{#if specificRanger}}
-        <form action="/rangers/{{specificRanger.id}}/sighting/new" method="post">
+        <form action="/rangers/{{specificRanger.id}}/sighting/new" method="post" style="opacity:0.5">
             <div class="form-group">
                 <label for="rangerName">Ranger Name</label>
                 <input type="text" id="rangerName" name="rangerName" class="form-control" value="{{specificRanger.name}}" disabled>
