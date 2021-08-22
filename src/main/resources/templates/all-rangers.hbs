@@ -1,0 +1,41 @@
+{{#partial "navlinks"}}
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            View Animals
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Endangered</a>
+            <a class="dropdown-item" href="#">Not Endangered</a>
+        </div>
+    </li>
+    <li class="nav-item active"><a class="nav-link" href="/rangers">Our Rangers</a></li>
+    <li class="nav-item"><a class="nav-link" href="/sightings">Sighting Locations</a></li>
+    <li class="nav-item"><a class="nav-link" href="/sighting/new">New Sighting</a></li>
+{{/partial}}
+
+{{#partial "preContent"}}
+    <div class="jumbotron jumbotrion-fluid ranger-jumbotron" style="background-image:url(/images/madiba-de-african-inspiration-ngbOgBUF4wk-unsplash.jpg);background-size: cover;background-repeat: no-repeat;height: 100vh;width: 100vw;">
+        <div class="container">
+             <h1 style="font-size: 7.5rem;font-family: serif;font-weight: revert;color: #fff">Our Dedicated Rangers</h1>
+             <p class="lead" style="color:#fff">Kenya pride of africa keeping track of our animals</p>
+        </div>
+    </div>
+{{/partial}}
+
+{{#partial "content"}}
+    {{#if rangers}}
+        <h2 class="text-center" style="margin-top: -50%;color: #fff;font-size: xx-large;font-weight: 600;" >Our Dedicated Rangers</h2>
+        <ul class="list-group" style="opacity:0.5">
+
+            {{#each rangers}}
+                <li class="list-group-item">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <h5 class="text-center">No rangers registered. Report a sighting become  a ranger</h5>
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}
